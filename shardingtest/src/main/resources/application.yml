@@ -1,0 +1,3 @@
+spring:
+    profiles:
+        include: sharding # 导入其他yml配置，需要保持格式application-xxx.yml

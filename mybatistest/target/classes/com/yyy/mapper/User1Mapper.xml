@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.yyy.mapper.User1Mapper">
+<!--
+    <cache/> 开启二级缓存 会生成一个采用最近最少使用算法最多只能存储1024个元素的缓存
+-->
+    <select id="getList" resultType="com.yyy.mapper.User1">
+        select * from user
+    </select>
+</mapper>

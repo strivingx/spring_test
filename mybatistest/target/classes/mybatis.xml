@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <properties resource="db.properties">
+        <!--<property name="username" value="dev_user"/>-->
+        <!--<property name="password" value="F2Fa3!33TYyg"/>-->
+    </properties>
+
+    <settings>
+        <setting name="localCacheScope" value="SESSION"/> <!-- 一级缓存 -->
+        <setting name="cacheEnabled" value="false" /> <!-- 二级缓存 -->
+        <setting name="logPrefix" value="com.yyy."/>
+
+        <!--<setting name="localCacheScope" value="STATEMENT"/>-->
+    </settings>
+    <!-- <typeAliases>
+         <typeAlias type="com.yyy.User" alias="User"/>
+         <package name="com.yyy"/>
+    </typeAliases> -->
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/yyy/UserMapper.xml"/>
+        <mapper class="com.yyy.UserDao"/>
+        <package name="com/yyy/mapper"/>
+    </mappers>
+</configuration>
